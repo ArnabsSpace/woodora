@@ -1,0 +1,8 @@
+@layer components {
+  .card {
+    @apply bg-white p-4 rounded-lg shadow-md;
+  }
+  .card-title {
+    @apply text-lg font-semibold mb-2;
+  }
+}
