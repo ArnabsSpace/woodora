@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 import logo from "../assets/icons/woodora-logo-dark.svg";
 import wishIcon from "../assets/icons/wish.svg";
 import cartIcon from "../assets/icons/cart.svg";
@@ -8,10 +8,37 @@ import userIcon from "../assets/icons/user.svg";
 import searchIcon from "../assets/icons/search.svg";
 import menuHB from "../assets/icons/menuHB.svg";
 import TopBar from "./TopBar";
+import LogoutButton from "./LogoutButton";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("user"));
+
+  const cartCount = useSelector((state) => state.cart.cartItems.length);
+  const wishCount = useSelector((state) => state.wishlist.wishlistItems.length);
+
+  // useEffect(() => {
+  //   const handleStorageChange = () => {
+  //     setIsLoggedIn(!!localStorage.getItem("user"));
+  //   };
+  //   window.addEventListener("storage", handleStorageChange);
+  //   return () => window.removeEventListener("storage", handleStorageChange);
+  // }, []);
+
+  useEffect(() => {
+    const updateLoginState = () => {
+      setIsLoggedIn(!!localStorage.getItem("user"));
+    };
+
+    window.addEventListener("storage", updateLoginState);       // for other tabs
+    window.addEventListener("user-login-status-changed", updateLoginState); // for current tab
+
+    return () => {
+      window.removeEventListener("storage", updateLoginState);
+      window.removeEventListener("user-login-status-changed", updateLoginState);
+    };
+  }, []);
 
   return (
     <>
@@ -34,37 +61,53 @@ export default function Header() {
 
           {/* Icons */}
           <div className="flex items-center gap-4 text-xl text-black relative">
-            <Link to="/search" className="hover:text-primary">
+            <Link to="/products" className="hover:text-primary">
               <img src={searchIcon} alt="search" className="w-6 h-6" />
             </Link>
-            <Link to="/wishlist" className="hover:text-primary">
+            <Link to="/wishlist" className="hover:text-primary relative">
               <img src={wishIcon} alt="wish" className="w-6 h-6" />
+              {wishCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {wishCount}
+                </span>
+              )}
             </Link>
-            <Link to="/cart" className="hover:text-primary">
+            <Link to="/cart" className="hover:text-primary relative">
               <img src={cartIcon} alt="cart" className="w-6 h-6" />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </Link>
 
-            {/* User Icon with Dropdown */}
+            {/* User Dropdown */}
             <div className="relative w-6 h-6">
-              <button
-                onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                className="hover:text-primary"
-              >
-                <img src={userIcon} alt="user" className="w-6 h-6" />
-              </button>
-              {userDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-md z-50">
-                  <Link to="/orders" className="block px-4 py-2 hover:bg-gray-100">
-                    My Orders
-                  </Link>
-                  <button className="block w-full text-left px-4 py-2 hover:bg-gray-100">
-                    Logout
+              {isLoggedIn ? (
+                <>
+                  <button
+                    onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                    className="hover:text-primary"
+                  >
+                    <img src={userIcon} alt="user" className="w-6 h-6" />
                   </button>
-                </div>
+                  {userDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-md z-50">
+                      <Link to="/orders" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setUserDropdownOpen(false)}>
+                        My Orders
+                      </Link>
+                      <LogoutButton onAfterLogout={() => setUserDropdownOpen(false)} />
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link to="/login" className="hover:text-primary">
+                  <img src={userIcon} alt="user" className="w-6 h-6" />
+                </Link>
               )}
             </div>
 
-            {/* Hamburger (Mobile Only) */}
+            {/* Hamburger for Mobile */}
             <button
               onClick={() => setMobileMenuOpen(true)}
               className="md:hidden hover:text-primary"
@@ -74,7 +117,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu Overlay */}
+        {/* Mobile Menu */}
         <div
           className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -92,13 +135,20 @@ export default function Header() {
             <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
             <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             <hr className="my-2" />
-            <Link to="/login" onClick={() => setMobileMenuOpen(false)}>Login</Link>
+            {isLoggedIn ? (
+              <>
+                <Link to="/orders" onClick={() => setMobileMenuOpen(false)}>My Orders</Link>
+                <LogoutButton onAfterLogout={() => setMobileMenuOpen(false)} />
+              </>
+            ) : (
+              <Link to="/login" onClick={() => setMobileMenuOpen(false)}>Login</Link>
+            )}
             <Link to="/wishlist" onClick={() => setMobileMenuOpen(false)}>Wishlist</Link>
             <Link to="/cart" onClick={() => setMobileMenuOpen(false)}>Cart</Link>
           </nav>
         </div>
 
-        {/* Optional: dark background overlay when menu is open */}
+        {/* Background overlay when mobile menu open */}
         {mobileMenuOpen && (
           <div
             className="fixed inset-0 bg-black bg-opacity-30 z-40"

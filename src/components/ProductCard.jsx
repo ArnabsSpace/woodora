@@ -8,7 +8,7 @@ import ProdImage1 from '../assets/prodImages/prod1.png';
 export default function ProductCard({ product }) {
   if (!product) return null;
     const navigate = useNavigate();
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
   const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
   const isWishlisted = wishlistItems.some((item) => item.id === product.id);

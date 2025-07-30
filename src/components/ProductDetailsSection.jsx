@@ -6,6 +6,7 @@ import { addToCart } from '../redux/features/cartSlice';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import QuantitySelector from './QuantitySelector';
 
 export default function ProductDetailsSection() {
   const navigate = useNavigate();
@@ -68,21 +69,18 @@ export default function ProductDetailsSection() {
           {/* Quantity Selector */}
           <div className="mt-6">
             <label className="block mb-2 text-sm font-medium">Quantity:</label>
-            <div className="flex items-center w-32 border border-gray-300 rounded-full overflow-hidden">
-                <button
-                onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                className="w-10 h-10 text-lg font-bold text-gray-700 hover:bg-gray-100"
-                >
-                –
-                </button>
-                <div className="flex-1 text-center font-medium">{quantity}</div>
-                <button
-                onClick={() => setQuantity(prev => prev + 1)}
-                className="w-10 h-10 text-lg font-bold text-gray-700 hover:bg-gray-100"
-                >
-                +
-                </button>
-            </div>
+           
+            
+            <QuantitySelector
+              productId={product.id}
+              quantity={
+                isInCart
+                  ? cartItems.find(item => item.id === product.id)?.quantity || 1
+                  : quantity
+              }
+              setQuantity={setQuantity}
+              isInCart={isInCart}
+            />
           </div>
 
           {/* Action Buttons */}
