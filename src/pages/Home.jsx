@@ -4,7 +4,9 @@ import BannerSliderSwiper from '../components/Slider/BannerSliderSwiper';
 import CraftedWithExcellence from '../components/HomeComponent/CraftedWithExcellence';
 
 import HomePageProductSection from '../components/HomeComponent/HomePageProductSection';
-
+import CraftedQualitySection from '../components/HomeComponent/CraftedQualitySection';
+import TestimonialsSlider from '../components/HomeComponent/TestimonialsSlider';
+import BlogSection from '../components/HomeComponent/BlogSection';
 
 function Home() {
   return (
@@ -16,11 +18,11 @@ function Home() {
       <CraftedWithExcellence />
 
       <HomePageProductSection />
+      <CraftedQualitySection />
+      <TestimonialsSlider />
+      <BlogSection />
       
-       <div className="text-center py-20">
-      <h1 className="text-4xl font-bold text-blue-600">Tailwind is working!</h1>
-      <p className="mt-4 text-gray-500">Now we can start building your homepage 🚀</p>
-    </div>
+      
     </>
    
   );

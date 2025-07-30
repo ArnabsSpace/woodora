@@ -5,10 +5,10 @@ import ProdImage3 from '../../assets/prodImages/prod5.png';
 export default function CraftedWithExcellence() {
   return (
     <section className="w-full bg-white py-16">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
         
         {/* Left Text Section */}
-        <div className="flex-1 max-w-[400px] text-center sm:text-left">
+        <div className="flex-1 max-w-full lg:max-w-[400px] text-center sm:text-left">
           <p className="text-sm text-primary font-medium uppercase mb-2 tracking-widest">
             Namkeit
           </p>

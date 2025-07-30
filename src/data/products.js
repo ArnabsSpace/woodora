@@ -1,10 +1,51 @@
+import bed1 from '../assets/prodImages/bed1.png';
+import bed2 from '../assets/prodImages/bed2.png';
+import bed3 from '../assets/prodImages/bed3.png';
+import chair1 from '../assets/prodImages/chair1.png';
+import chair2 from '../assets/prodImages/chair2.png';
+import chair3 from '../assets/prodImages/chair3.png';
+import chair4 from '../assets/prodImages/chair4.png';
+import lamp1 from '../assets/prodImages/lamp1.png';
+import lamp2 from '../assets/prodImages/lamp2.png';
+import lamp3 from '../assets/prodImages/lamp3.png';
+import prod1 from '../assets/prodImages/prod1.png';
+import prod2 from '../assets/prodImages/prod2.png';
+import prod3 from '../assets/prodImages/prod3.png';
+import prod4 from '../assets/prodImages/prod4.png';
+import prod5 from '../assets/prodImages/prod5.png';
+import prod6 from '../assets/prodImages/prod6.png';
+import prod7 from '../assets/prodImages/prod7.png';
+import prod8 from '../assets/prodImages/prod8.png';
+import prod9 from '../assets/prodImages/prod9.png';
+import prod10 from '../assets/prodImages/prod10.png';
+import prod11 from '../assets/prodImages/prod11.png';
+import prod12 from '../assets/prodImages/prod12.png';
+import prod13 from '../assets/prodImages/prod13.png';
+import prod14 from '../assets/prodImages/prod14.png';
+import prod15 from '../assets/prodImages/prod15.png';
+import prod16 from '../assets/prodImages/prod16.png';
+import prod17 from '../assets/prodImages/prod17.png';
+import prod18 from '../assets/prodImages/prod18.png';
+import prod19 from '../assets/prodImages/prod19.png';
+import prod20 from '../assets/prodImages/prod20.png';
+import prod21 from '../assets/prodImages/prod21.png';
+import prod22 from '../assets/prodImages/prod22.png';
+import sofa1 from '../assets/prodImages/sofa1.png';
+import sofa2 from '../assets/prodImages/sofa2.png';
+import sofa3 from '../assets/prodImages/sofa3.png';
+import table1 from '../assets/prodImages/table1.png';
+import table2 from '../assets/prodImages/table2.png';
+import table3 from '../assets/prodImages/table3.png';
+import table4 from '../assets/prodImages/table4.png';
+
+
 const products = [
   {
     id: "prod001",
     name: "Blue Velvet Lounge Chair",
     category: "Chair",
-    gallery: ["prod1.png", "chair1.png", "chair2.png", "chair3.png"],
-    thumbnail: "prod1.png",
+    gallery: [prod1, chair1, chair2, chair3],
+    thumbnail: prod1,
     colors: ["Blue", "Navy"],
     oldPrice: 149.99,
     newPrice: 119.99,
@@ -23,8 +64,8 @@ const products = [
     id: "prod002",
     name: "Modern Teal Sofa",
     category: "Sofa",
-    gallery: ["prod2.png", "sofa1.png", "sofa2.png", "sofa3.png"],
-    thumbnail: "prod2.png",
+    gallery: [prod2, sofa1, sofa2, sofa3],
+    thumbnail: prod2,
     colors: ["Teal", "Green"],
     oldPrice: 399.00,
     newPrice: 339.00,
@@ -43,8 +84,8 @@ const products = [
     id: "prod003",
     name: "Scandi Green Armchair",
     category: "Chair",
-    gallery: ["prod3.png", "chair3.png", "chair4.png", "chair1.png"],
-    thumbnail: "prod3.png",
+    gallery: [prod3, chair3, chair4, chair1],
+    thumbnail: prod3,
     colors: ["Green", "Olive"],
     oldPrice: 129.99,
     newPrice: 109.99,
@@ -63,8 +104,8 @@ const products = [
     id: "prod004",
     name: "Swivel Lounge Chair",
     category: "Chair",
-    gallery: ["prod4.png", "chair2.png", "chair3.png", "table4.png"],
-    thumbnail: "prod4.png",
+    gallery: [prod4, chair2, chair3, table4],
+    thumbnail: prod4,
     colors: ["Gray", "Beige"],
     oldPrice: 189.00,
     newPrice: 159.00,
@@ -83,8 +124,8 @@ const products = [
     id: "prod005",
     name: "Round Yellow Coffee Table",
     category: "Table",
-    gallery: ["prod5.png", "table4.png", "table1.png", "table3.png"],
-    thumbnail: "prod5.png",
+    gallery: [prod5, table4, table1, table3],
+    thumbnail: prod5,
     colors: ["Yellow", "Oak"],
     oldPrice: 110.00,
     newPrice: 89.00,
@@ -103,8 +144,8 @@ const products = [
     id: "prod006",
     name: "Elegant Gold Side Table",
     category: "Table",
-    gallery: ["prod6.png", "table1.png", "table2.png", "table4.png"],
-    thumbnail: "prod6.png",
+    gallery: [prod6, table1, table2, table4],
+    thumbnail: prod6,
     colors: ["Gold", "Glass"],
     oldPrice: 139.00,
     newPrice: 115.00,
@@ -123,8 +164,8 @@ const products = [
     id: "prod007",
     name: "Pet Basket Coffee Table",
     category: "Table",
-    gallery: ["prod7.png", "table3.png", "table4.png", "table1.png"],
-    thumbnail: "prod7.png",
+    gallery: [prod7, table3, table4, table1],
+    thumbnail: prod7,
     colors: ["Beige", "Natural"],
     oldPrice: 179.00,
     newPrice: 149.00,
@@ -143,8 +184,8 @@ const products = [
     id: "prod008",
     name: "Sculptural Dining Table",
     category: "Table",
-    gallery: ["prod8.png", "table4.png", "table2.png"],
-    thumbnail: "prod8.png",
+    gallery: [prod8, table4, table2],
+    thumbnail: prod8,
     colors: ["Bronze", "Glass"],
     oldPrice: 429.00,
     newPrice: 379.00,
@@ -163,8 +204,8 @@ const products = [
     id: "prod009",
     name: "Classic Gold Lamp",
     category: "Lamp",
-    gallery: ["prod9.png", "lamp2.png", "lamp3.png"],
-    thumbnail: "prod9.png",
+    gallery: [prod9, lamp2, lamp3],
+    thumbnail: prod9,
     colors: ["Gold", "Black"],
     oldPrice: 85.00,
     newPrice: 69.00,
@@ -183,8 +224,8 @@ const products = [
     id: "prod010",
     name: "Ceramic Base Lamp",
     category: "Lamp",
-    gallery: ["prod10.png", "lamp1.png", "lamp3.png", "lamp2.png"],
-    thumbnail: "prod10.png",
+    gallery: [prod10, lamp1, lamp3, lamp2],
+    thumbnail: prod10,
     colors: ["Aqua", "Beige"],
     oldPrice: 78.00,
     newPrice: 62.00,
@@ -203,8 +244,8 @@ const products = [
     id: "prod011",
     name: "Modern Brass Lamp",
     category: "Lamp",
-    gallery: ["prod11.png", "lamp3.png", "lamp2.png"],
-    thumbnail: "prod11.png",
+    gallery: [prod11, lamp3, lamp2],
+    thumbnail: prod11,
     colors: ["Brass", "White"],
     oldPrice: 95.00,
     newPrice: 82.00,
@@ -223,8 +264,8 @@ const products = [
     id: "prod012",
     name: "Wood Tripod Lamp",
     category: "Lamp",
-    gallery: ["prod12.png", "lamp1.png", "lamp2.png", "lamp3.png"],
-    thumbnail: "prod12.png",
+    gallery: [prod12, lamp1.png, lamp2.png, lamp3.png],
+    thumbnail: prod12,
     colors: ["Natural", "White"],
     oldPrice: 72.00,
     newPrice: 59.00,
@@ -243,8 +284,8 @@ const products = [
     id: "prod013",
     name: "Luxe Swivel Accent Chair",
     category: "Chair",
-    gallery: ["prod13.png", "chair1.png", "chair3.png", "prod4.png"],
-    thumbnail: "prod13.png",
+    gallery: [prod13, chair1, chair3, prod4],
+    thumbnail: prod13,
     colors: ["Beige", "Grey"],
     oldPrice: 199.00,
     newPrice: 169.00,
@@ -263,8 +304,8 @@ const products = [
     id: "prod014",
     name: "Olive Green Lounge Chair",
     category: "Chair",
-    gallery: ["prod14.png", "chair2.png", "chair4.png", "prod1.png"],
-    thumbnail: "prod14.png",
+    gallery: [prod14, chair2, chair4, prod1],
+    thumbnail: prod14,
     colors: ["Green", "Olive"],
     oldPrice: 145.00,
     newPrice: 119.00,
@@ -283,8 +324,8 @@ const products = [
     id: "prod015",
     name: "Cloud Gray Swivel Chair",
     category: "Chair",
-    gallery: ["prod15.png", "chair4.png", "prod4.png", "prod13.png"],
-    thumbnail: "prod15.png",
+    gallery: [prod15, chair4, prod4, prod13],
+    thumbnail: prod15,
     colors: ["Gray", "Light Gray"],
     oldPrice: 159.00,
     newPrice: 135.00,
@@ -303,8 +344,8 @@ const products = [
     id: "prod016",
     name: "Blush Shell Armchair",
     category: "Chair",
-    gallery: ["prod16.png", "chair1.png", "chair3.png", "prod14.png"],
-    thumbnail: "prod16.png",
+    gallery: [prod16, chair1, chair3, prod14],
+    thumbnail: prod16,
     colors: ["Pink", "Gold"],
     oldPrice: 139.00,
     newPrice: 118.00,
@@ -323,8 +364,8 @@ const products = [
     id: "prod017",
     name: "Pink Velvet Vanity Chair",
     category: "Chair",
-    gallery: ["prod17.png", "chair1.png", "prod16.png", "prod13.png"],
-    thumbnail: "prod17.png",
+    gallery: [prod17, chair1, prod16, prod13],
+    thumbnail: prod17,
     colors: ["Blush", "Rose"],
     oldPrice: 129.00,
     newPrice: 99.00,
@@ -343,8 +384,8 @@ const products = [
     id: "prod018",
     name: "Charcoal Arm Accent Chair",
     category: "Chair",
-    gallery: ["prod18.png", "chair2.png", "prod3.png", "prod1.png"],
-    thumbnail: "prod18.png",
+    gallery: [prod18, chair2, prod3, prod1],
+    thumbnail: prod18,
     colors: ["Dark Gray", "Black"],
     oldPrice: 159.00,
     newPrice: 132.00,
@@ -363,8 +404,8 @@ const products = [
     id: "prod019",
     name: "Mid-century Molded Chair",
     category: "Chair",
-    gallery: ["prod19.png", "chair3.png", "prod18.png", "prod2.png"],
-    thumbnail: "prod19.png",
+    gallery: [prod19, chair3, prod18, prod2],
+    thumbnail: prod19,
     colors: ["Black", "Natural"],
     oldPrice: 89.00,
     newPrice: 75.00,
@@ -383,8 +424,8 @@ const products = [
     id: "prod020",
     name: "Wooden Frame Queen Bed",
     category: "Bed",
-    gallery: ["prod20.png", "bed1.png", "bed2.png", "bed3.png"],
-    thumbnail: "prod20.png",
+    gallery: [prod20, bed1, bed2, bed3],
+    thumbnail: prod20,
     colors: ["Walnut", "Brown"],
     oldPrice: 749.00,
     newPrice: 679.00,
@@ -403,8 +444,8 @@ const products = [
     id: "prod021",
     name: "Minimalist King Bed Frame",
     category: "Bed",
-    gallery: ["prod21.png", "bed2.png", "bed3.png", "prod20.png"],
-    thumbnail: "prod21.png",
+    gallery: [prod21, bed2, bed3, prod20],
+    thumbnail: prod21,
     colors: ["Oak", "White"],
     oldPrice: 789.00,
     newPrice: 715.00,
@@ -423,8 +464,8 @@ const products = [
     id: "prod022",
     name: "White Comfort Bed Frame",
     category: "Bed",
-    gallery: ["prod22.png", "bed1.png", "bed2.png", "prod20.png"],
-    thumbnail: "prod22.png",
+    gallery: [prod22, bed1, bed2, prod20],
+    thumbnail: prod22,
     colors: ["White", "Ivory"],
     oldPrice: 699.00,
     newPrice: 649.00,
