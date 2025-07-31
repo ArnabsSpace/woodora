@@ -4,6 +4,9 @@ import { addToCart } from '../redux/features/cartSlice';
 import { toggleWishlist } from '../redux/features/wishlistSlice';
 import ProdImage1 from '../assets/prodImages/prod1.png';
 
+import HeartFilled from '../assets/icons/heart-filled.svg';
+import HeartOutline from '../assets/icons/heart-outline.svg';
+import CartBtn from '../assets/icons/cartbtn.svg';
 
 export default function ProductCard({ product }) {
   if (!product) return null;
@@ -30,7 +33,12 @@ export default function ProductCard({ product }) {
           }`}
           onClick={() => dispatch(toggleWishlist(product))}
         >
-          {isWishlisted ? '❤️' : '♡'}
+          {/* {isWishlisted ? '❤️' : '♡'} */}
+          <img
+            src={isWishlisted ? HeartFilled : HeartOutline}
+            alt="wishlist icon"
+            className="w-6 h-6 inline"
+          />
         </div>
         {product.oldPrice && product.newPrice && (
         <div className="absolute bottom-2 right-2 bg-yellow-400 text-primary text-xs font-bold px-2 py-1 rounded-full">
@@ -48,13 +56,20 @@ export default function ProductCard({ product }) {
       <div className="flex justify-between items-start sm:items-center flex-col sm:flex-row gap-4">
         <p className="text-lg font-bold text-gray-800">${product.newPrice || '0.00'}</p>
         <div
-          className={`w-full sm:w-40 transition delay-150 h-10 rounded-full ${
-            isInCart ? 'bg-amberGold cursor-default text-primary' : 'bg-primary hover:bg-primary-90 text-white cursor-pointer'
-          }  text-white flex items-center justify-center text-xl shadow cursor-pointer`}
-          onClick={() => dispatch(addToCart(product))}
+          className={`w-10 sm:w-10 h-10 rounded-full transition delay-150 ${
+            isInCart
+              ? 'bg-amberGold text-primary cursor-default'
+              : 'bg-primary hover:bg-primary-90 text-white cursor-pointer'
+          } flex items-center justify-center text-xl shadow`}
+          onClick={() => {
+            if (!isInCart) {
+              dispatch(addToCart(product));
+            }
+          }}
         >
-          <span className='text-base font-semibold'>{isInCart ? 'Added to Cart' : 'Add to Cart'}</span>
+          <img src={CartBtn} alt="cartbtn" className="w-6" />
         </div>
+
         {/* <div
           className={`w-8 h-8 rounded-full ${
             isInCart ? 'bg-green-500' : 'bg-primary'

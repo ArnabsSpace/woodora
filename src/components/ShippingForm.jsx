@@ -51,27 +51,34 @@ export default function ShippingForm() {
   };
 
   return (
-    <div className="w-full max-w-full flex flex-wrap gap-4 items-center justify-center">
-      {shippingFields.map(({ name, label, type }) => (
-        <div key={name} className={`w-full ${name === "address" ? "md:w-full" : "md:w-1/2"}`}>
-          <input
-            name={name}
-            type={type}
-            placeholder={label}
-            className={`w-full border p-2 rounded ${errors[name] ? "border-red-500" : ""}`}
-            value={formData[name]}
-            onChange={handleChange}
-          />
-          {errors[name] && <p className="text-sm text-red-500 mt-1">{errors[name]}</p>}
-        </div>
-      ))}
+    <div className="w-full p-4">
+      <h1 className="font-bold text-2xl mb-4 text-primary">Shipping Information</h1>
+      <div className="w-full max-w-full flex flex-wrap gap-0 items-center justify-center">
+        
+        {shippingFields.map(({ name, label, type }) => (
+          <div key={name} className={`w-full flex flex-col p-2 ${name === "address" ? "md:w-full" : "md:w-1/2"}`}>
+            <label htmlFor={name} className="font-medium text-base mb-2">{label}</label>
+            <input
+              name={name}
+              type={type}
+              placeholder={label}
+              className={`w-full border p-2 px-4 h-12 bg-primary-10 rounded-full ${errors[name] ? "border-red-500" : ""}`}
+              value={formData[name]}
+              onChange={handleChange}
+            />
+            {errors[name] && <p className="text-sm text-red-500 mt-1">{errors[name]}</p>}
+          </div>
+        ))}
 
-      <button
-        className="w-full bg-primary text-white py-2 rounded hover:bg-primary-90"
-        onClick={handleContinue}
-      >
-        Continue to Payment
-      </button>
+        <div className="flex w-full justify-end">
+          <button
+            className="w-full bg-primary text-white py-2 rounded-full h-12 hover:bg-primary-90 md:max-w-[250px] mt-8 max-w[200px] ml-auto mr-0"
+            onClick={handleContinue}
+          >
+            Continue to Payment
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

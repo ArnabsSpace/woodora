@@ -41,11 +41,11 @@ export default function HomePageProductSection() {
         </div>
 
         {/* View All (Optional) */}
-        <div className="text-center mt-10">
+        {/* <div className="text-center mt-10">
           <button className="text-primary text-sm font-medium underline hover:text-primary-dark transition">
             View All
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import PaymentMethod from "../components/PaymentMethod";
 import OrderSummary from "../components/OrderSummary";
 import { useNavigate } from "react-router-dom";
+import CheckoutSteps from '../components/CheckoutSteps';
 
 export default function Checkout() {
   const navigate = useNavigate();
@@ -35,13 +36,20 @@ export default function Checkout() {
 
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 justify-between w-full">
-      <div className="w-full md:w-2/3">
+    <>
+    <CheckoutSteps currentStep={3} />
+    <div className="mt-16">
+
+      <div className="flex flex-col md:flex-row gap-8 justify-between w-full container mx-auto">
+      <div className="w-full md:w-2/3 h-full p-4">
+        <h1 className="font-bold text-2xl mb-4 text-primary w-full">Shipping Information</h1>
         <PaymentMethod onConfirm={handleCompleteOrder} />
       </div>
-      <div className="w-full md:w-1/3">
+      <div className="w-full md:w-1/3 h-full">
         <OrderSummary />
       </div>
     </div>
+    </div>
+    </>
   );
 }

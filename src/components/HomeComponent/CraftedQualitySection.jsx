@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import woodwork from "../../assets/images/woodwork.png";
 import sofaImage from "../../assets/images/sofaImage.png";
+import ExploreButton from '../ExploreButton';
 
 export default function CraftedQualitySection() {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -58,13 +59,11 @@ export default function CraftedQualitySection() {
             thoughtful design. We use only the finest materials to ensure long-lasting beauty and
             comfort in every product.
           </p>
-          <button className="bg-primary text-white px-8 py-3 max-w-[200px] rounded-full hover:bg-primary-90 transition mb-8 sm:mb-24">
-            Explore Now
-          </button>
+          <ExploreButton className="mb-12"/>
           <img
             src={woodwork}
             alt="Woodwork craftsmanship"
-            className="rounded-xl w-full h-full object-cover"
+            className="rounded-xl w-full h-full object-cover "
           />
           
         </div>

@@ -130,7 +130,7 @@ export default function PaymentMethod({ onConfirm }) {
   );
 
   return (
-    <div className="w-full max-w-lg space-y-5 text-sm">
+    <div className="w-full max-w-full space-y-5 text-sm ">
       {/* Payment Options */}
       {["upi", "debit", "credit"].map((type) => (
         <div key={type} className="space-y-1">
@@ -171,12 +171,14 @@ export default function PaymentMethod({ onConfirm }) {
       {error && <div className="text-red-600 text-sm">{error}</div>}
 
       {/* Confirm Button */}
-      <button
-        className="w-full bg-[#2F265C] text-white py-3 rounded-full font-medium hover:opacity-90 mt-4"
-        onClick={handleConfirm}
-      >
-        Confirm Your Order
-      </button>
+      <div className="flex w-full justify-end ">
+          <button
+            className="w-full bg-primary text-white py-2 rounded-full h-12 hover:bg-primary-90 md:max-w-[250px] mt-8 max-w[200px] ml-auto mr-0"
+            onClick={handleConfirm}
+          >
+            Confirm Your Order
+          </button>
+      </div>
     </div>
   );
 }

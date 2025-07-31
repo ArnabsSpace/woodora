@@ -2,7 +2,7 @@ import { useState } from "react";
 import ProductCard from "../components/ProductCard";
 
 export default function AllProductsList({ products }) {
-  const [visibleCount, setVisibleCount] = useState(8);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   const handleViewMore = () => {
     setVisibleCount((prev) => prev + 8);
@@ -14,6 +14,7 @@ export default function AllProductsList({ products }) {
   return (
     <section className="MainProdSection py-4">
       <div className="container mx-auto">
+        <h2 className="font-bold text-center py-8 text-3xl">Result For Furniture</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {products.slice(0, visibleCount).map((product) => (
             <ProductCard key={product.id} product={product} />

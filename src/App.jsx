@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <main className="font-montserrat">
         <ScrollToTop />
+        <Breadcrumbs />
         <Outlet />
       </main>
       <Footer />

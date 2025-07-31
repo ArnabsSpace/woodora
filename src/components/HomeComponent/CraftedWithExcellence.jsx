@@ -1,6 +1,7 @@
 import ProdImage from '../../assets/prodImages/prod1.png';
 import ProdImage2 from '../../assets/prodImages/prod3.png';
 import ProdImage3 from '../../assets/prodImages/prod5.png';
+import ExploreButton from '../ExploreButton';
 
 export default function CraftedWithExcellence() {
   return (
@@ -20,9 +21,7 @@ export default function CraftedWithExcellence() {
             From premium oak to eco-friendly fabrics, every Namkeit piece is built to last —
             blending timeless design with reliable durability.
           </p>
-          <button className="bg-primary text-white px-6 py-3 rounded-full shadow hover:bg-primary-dark transition">
-            Explore Now
-          </button>
+          <ExploreButton />
         </div>
 
         {/* Product Cards Section */}

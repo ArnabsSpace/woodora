@@ -3,6 +3,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import ExploreButton from '../ExploreButton';
 
 import sliderData from "./sliderData";
 
@@ -37,9 +38,7 @@ export default function BannerSliderSwiper() {
                     <p className="text-gray-600 text-base md:text-lg mb-6">
                       {slide.subtitle}
                     </p>
-                    <button className="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-dark transition">
-                      Explore Now
-                    </button>
+                    <ExploreButton />
                   </div>
 
                   {/* Image Section */}

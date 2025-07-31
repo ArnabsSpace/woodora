@@ -93,7 +93,7 @@ export default function Header() {
                   </button>
                   {userDropdownOpen && (
                     <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-md z-50">
-                      <Link to="/orders" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setUserDropdownOpen(false)}>
+                      <Link to="/confirmation" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setUserDropdownOpen(false)}>
                         My Orders
                       </Link>
                       <LogoutButton onAfterLogout={() => setUserDropdownOpen(false)} />

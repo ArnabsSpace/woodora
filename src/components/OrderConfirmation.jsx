@@ -2,6 +2,7 @@ import OrderSummary from './OrderSummary';
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../redux/features/cartSlice";
+import YourOrders from '../components/YourOrders';
 
 export default function OrderConfirmation() {
    const dispatch = useDispatch();
@@ -50,14 +51,14 @@ export default function OrderConfirmation() {
           {deliverySteps.map((step, idx) => (
             <div key={idx} className="relative">
               {/* Dot */}
-              <div className={`w-3 h-3 rounded-full absolute -left-2.5 top-1 ${
+              <div className={`w-3 h-3 rounded-full absolute -left-7 top-1 ${
                 step.done ? "bg-green-500" : "bg-gray-500"
               }`} />
 
               {/* Content */}
               <div className="text-sm">
-                <p className="font-medium text-gray-800">{step.label}</p>
-                <p className="text-xs text-gray-500">{step.time}</p>
+                <p className="font-medium text-lg text-gray-800">{step.label}</p>
+                <p className="text-sm text-gray-500">{step.time}</p>
               </div>
             </div>
           ))}
@@ -78,7 +79,7 @@ export default function OrderConfirmation() {
       {/* Right Section: Order Summary */}
       
       <div className="w-full">
-        <OrderSummary />
+        <YourOrders />
       </div>
     </div>
   );
