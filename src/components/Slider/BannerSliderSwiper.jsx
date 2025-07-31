@@ -38,7 +38,7 @@ export default function BannerSliderSwiper() {
                     <p className="text-gray-600 text-base md:text-lg mb-6">
                       {slide.subtitle}
                     </p>
-                    <ExploreButton />
+                    <ExploreButton/>
                   </div>
 
                   {/* Image Section */}

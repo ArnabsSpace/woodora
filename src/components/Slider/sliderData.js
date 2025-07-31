@@ -1,3 +1,7 @@
+import banner1 from "../../assets/images/banner1.png";
+import banner2 from "../../assets/images/banner2.png";
+import banner3 from "../../assets/images/banner3.png";
+
 const sliderData = [
   {
     id: 1,
@@ -5,7 +9,7 @@ const sliderData = [
     subtitle: "From accent chairs to recliners — find your ideal seat for every corner.",
     price: "$102.00",
     oldPrice: "$205.00",
-    image: "./src/assets/images/banner1.png", // replace with your path
+    image: banner1,
     bgColor: "bg-[#FFF2E5]",
   },
   {
@@ -14,7 +18,7 @@ const sliderData = [
     subtitle: "From accent chairs to recliners — find your ideal seat for every corner.",
     price: "$159.00",
     oldPrice: "$299.00",
-    image: "./src/assets/images/banner2.png", // replace with your path
+    image: banner2,
     bgColor: "bg-[#FFF2E5]",
   },
   {
@@ -23,7 +27,7 @@ const sliderData = [
     subtitle: "From accent chairs to recliners — find your ideal seat for every corner.",
     price: "$389.00",
     oldPrice: "$629.00",
-    image: "./src/assets/images/banner3.png", // replace with your path
+    image: banner3,
     bgColor: "bg-[#FFF2E5]",
   },
 ];
