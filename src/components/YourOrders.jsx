@@ -24,7 +24,7 @@ export default function YourOrders() {
       <h2 className="text-xl font-bold text-gray-800 mb-6">Your Orders</h2>
 
       {orderHistory.map((order, idx) => (
-        <div key={idx} className="mb-10 border rounded-lg p-4">
+        <div key={idx} className="mb-10 ">
           <div className="flex justify-between items-center mb-4">
             <div>
               <p className="text-sm font-medium">Order #{idx + 1}</p>

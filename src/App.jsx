@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="font-montserrat">
+      <main className="font-montserrat select-none">
         <ScrollToTop />
         <Breadcrumbs />
         <Outlet />
